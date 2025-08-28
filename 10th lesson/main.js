@@ -7,11 +7,18 @@ function first() {
     let infoOfUser = {
         name: prompt("Введіть ім'я,"),
         age: prompt("Введіть вік"),
-        leavePleace: prompt("Введіть місце вашого проживання")
+        leavePleace: prompt("Введіть місце вашого проживання"),
+        showInfo() {
+            console.log(`Ім'я: ${this.name}`);
+            console.log(`Вік: ${this.name}`);
+            console.log(`Місце проживання: ${this.leavePleace}`)
+        }
     }
-
-    console.log(infoOfUser)
+    return infoOfUser
 }
+
+// let firstTask = first()
+// firstTask.showInfo()
 
 // HomeWork 10.2. Отримання парних чисел з масиву
 // Маєте масив чисел. 
@@ -46,58 +53,54 @@ let obj = {
         {
             name: "Іван Петренко",
             numberOfPhone: "+380971234567",
-            emain: "ivan.petrenko@example.com"
+            email: "ivan.petrenko@example.com"
         }, {
             name: "Оксана Коваль",
             numberOfPhone: "+380931112233",
-            emain: "oksana.koval@example.com"
+            email: "oksana.koval@example.com"
         }, {
             name: "Микола Шевченко",
             numberOfPhone: "+380503456789",
-            emain: "mykola.shevchenko@example.com"
+            email: "mykola.shevchenko@example.com"
         }, {
             name: "Наталя Іванчук",
             numberOfPhone: "+380671234890",
-            emain: "nataliya.ivanchuk@example.com"
+            email: "nataliya.ivanchuk@example.com"
         }, {
             name: "Андрій Дяченко",
             numberOfPhone: "+380991112244",
-            emain: "andriy.dyachenko@example.com"
+            email: "andriy.dyachenko@example.com"
         }, {
             name: "Олена Сорока",
             numberOfPhone: "+380631234567",
-            emain: "olena.soroka@example.com"
+            email: "olena.soroka@example.com"
         }, {
             name: "Дмитро Гнатюк",
             numberOfPhone: "+380661234321",
-            emain: "dmytro.hnatyuk@example.com"
+            email: "dmytro.hnatyuk@example.com"
         }, {
             name: "Марія Ткачук",
             numberOfPhone: "+380681112233",
-            emain: "mariya.tkachuk@example.com"
+            email: "mariya.tkachuk@example.com"
         }
-    ]
-} // дані користувачів попроcив вигадати в чата gpt
+    ],
+    finduser() {
+        let userName = prompt("Введіть користувача якого хочете знайти")
+        const userInfo = this.property.find(user => user.name === userName)
+        console.log(userInfo)
+    },
+    newUser() {
+        let newUserName = prompt("Введіть ім'я нового користувача")
+        let newUserEmail = prompt("Введіть email нового користувача")
+        let newUserNumberOfPhone = prompt("Введіть номер телефону нового користувача")
 
-function finduser() {
-    let userName = prompt("Введіть користувача якого хочете знайти")
-    const userInfo = obj.property.find(user => user.name === userName)
-    console.log(userInfo)
+        const newUserObj = {
+            name: newUserName,
+            emain: newUserEmail,
+            numberOfPhone: newUserNumberOfPhone
+        };
+
+        const newUsers = this.property.push(newUserObj)
+    }
+
 }
-
-function newUser() {
-    let newUserName = prompt("Введіть ім'я нового користувача")
-    let newUserEmail = prompt("Введіть email нового користувача")
-    let newUserNumberOfPhone = prompt("Введіть номер телефону нового користувача")
-
-    const newUserObj = {
-        name: newUserName,
-        emain: newUserEmail,
-        numberOfPhone: newUserNumberOfPhone
-    };
-
-    const newUsers = obj.property.push(newUserObj)
-}
-
-newUser()
-console.log(obj)
