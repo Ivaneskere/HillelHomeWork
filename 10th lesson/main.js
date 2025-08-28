@@ -77,7 +77,7 @@ let obj = {
         }, {
             name: "Дмитро Гнатюк",
             numberOfPhone: "+380661234321",
-            email: "dmytro.hnatyuk@example.com"
+            email: "dmytro.hnatyu~k@example.com"
         }, {
             name: "Марія Ткачук",
             numberOfPhone: "+380681112233",
@@ -90,17 +90,17 @@ let obj = {
         console.log(userInfo)
     },
     newUser() {
-        let newUserName = prompt("Введіть ім'я нового користувача")
-        let newUserEmail = prompt("Введіть email нового користувача")
-        let newUserNumberOfPhone = prompt("Введіть номер телефону нового користувача")
+        let newUserName = prompt("Введіть ім'я нового користувача:");
+        let newUserEmail = prompt("Введіть email нового користувача:");
+        let newUserNumberOfPhone = prompt("Введіть номер телефону нового користувача:");
 
         const newUserObj = {
             name: newUserName,
-            emain: newUserEmail,
+            email: newUserEmail,
             numberOfPhone: newUserNumberOfPhone
         };
 
-        const newUsers = this.property.push(newUserObj)
+        this.property.push(newUserObj);
+        console.log("Новий контакт додано:", newUserObj);
     }
-
-}
+};
