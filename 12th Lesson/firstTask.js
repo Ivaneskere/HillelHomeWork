@@ -9,6 +9,7 @@ function firstTask() {
     })
 
     const pereadres = document.querySelector("#nextS").addEventListener("click", () => {
-        window.location.href = myLink
+        if (myLink !== '' || myLink !== undefined)
+            window.location.href = myLink
     })
 }
