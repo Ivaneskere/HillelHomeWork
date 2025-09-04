@@ -3,14 +3,14 @@
 // При повторному натисканні – повертається попередній колір
 
 function secondTask() {
-const myText = document.querySelector("#text")
-const myBtn = document.querySelector(".btn-change")
+    const myText = document.querySelector("#text")
+    const myBtn = document.querySelector(".btn-change")
 
-myBtn.addEventListener('click',() => {
-    if(myText.style.color === 'red') {
-        myText.style.color = 'black'
-    } else {
-        myText.style.color = 'red'
-    }
-}) 
+    myBtn.addEventListener('click', () => {
+        if (myText.style.color === 'red') {
+            myText.style.color = 'black'
+        } else {
+            myText.style.color = 'red'
+        }
+    })
 }
