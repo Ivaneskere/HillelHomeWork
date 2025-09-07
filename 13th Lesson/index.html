@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css"></link>
+</head>
+
+<body>
+    <form name="myForm">
+
+        <p>Введіть ваше ім'я</p>
+        <input type="text" name="nameOfUser" placeholder="Введіть ваше ім'я">
+
+        <p>Введіть ваше прізвище</p>
+        <input type="text" name="lastnameOfUser" placeholder="Введіть ваше прізвище">
+
+        <p>Введіть вашу дату народження</p>
+        <input type="date" name="dateOfBirthdayOfUser" placeholder="Введіть вашу дату народження">
+
+        <p>Введіть вашу стать</p>
+        <p>Ж<input value="famale" type="radio" name="gender"></p>
+        <p>Ч<input value="male"  type="radio" name="gender"></p>
+        <p></p>
+
+        <p>Введіть ваше місто</p>
+        <select name="city">
+            <option value="LV">Львів</option>
+            <option value="KU">Київ</option>
+            <option value="KH">Харків</option>
+            <option value="OD">Одеса</option>
+            <option value="ZT">Житомир</option>
+        </select>
+
+        <p>Введіть вашу адресу</p>
+        <input type="textarea" name="adress">
+
+        <p>Введіть якими мовами ви володієте</p>
+        <p><input value="Англійська" type="checkbox" name="languages">Англійська</p>
+        <p><input value="Корейська" type="checkbox" name="languages">Корейська</p>
+        <p><input value="Українська" type="checkbox" name="languages">Українська</p>
+        <p><input value="Польська" type="checkbox" name="languages">Польська</p>
+        <p><input value="Угорська" type="checkbox" name="languages">Угорська</p>
+        <p><input value="Норвезька" type="checkbox" name="languages">Норвезька</p>
+
+        <button id="myButton" type="button">Зберегти дані</button>
+
+
+
+    </form>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
