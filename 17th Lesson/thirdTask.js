@@ -28,19 +28,3 @@ console.log(account1.getBalance()); // 1500
 account1.withdraw(200);
 
 console.log(account1.getBalance()); // 1300
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
