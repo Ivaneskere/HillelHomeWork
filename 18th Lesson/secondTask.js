@@ -26,17 +26,12 @@ function slider() {
     function startInterval() {
         interval = setInterval(() => {
             value++
-            showSlide()
+            if (value >= myImg.length) {
+                value = 0
+            }
+            Img.src = myImg[value]
+            updateSlider()
         }, 3000)
-    }
-
-
-    function showSlide() {
-        if (value >= myImg.length) {
-            value = 0
-        }
-        Img.src = myImg[value]
-        updateSlider()
     }
 
     function prev() {
