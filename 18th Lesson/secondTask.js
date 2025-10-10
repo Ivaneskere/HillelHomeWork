@@ -13,17 +13,10 @@ function slider() {
     const Img = document.querySelector('#scrolImg')
     const pBtn = document.querySelector('#prevBtn')
     const nBtn = document.querySelector('#nextBtn')
+    let interval
 
-    let interval = setInterval(() => {
-        value++
-        if (value >= myImg.length) {
-            value = 0
-        }
-        Img.src = myImg[value]
-        updateSlider()
-    }, 3000)
-
-    function startInterval() {
+    function restartInterval() {
+        clearInterval(interval)
         interval = setInterval(() => {
             value++
             if (value >= myImg.length) {
@@ -42,8 +35,7 @@ function slider() {
             }
             Img.src = myImg[value]
             updateSlider()
-            clearInterval(interval)
-            startInterval()
+            restartInterval()
         })
     }
 
@@ -56,15 +48,14 @@ function slider() {
             }
             Img.src = myImg[value]
             updateSlider()
-            clearInterval(interval)
-            startInterval()
+            restartInterval()
         })
     }
 
     function nav() {
         const mainDiv = document.querySelector("#navigation")
 
-        myImg.forEach((Img, i) => {
+        myImg.forEach((ImgSrc, i) => {
             const div = document.createElement('div')
             div.classList.add('nav-krapka')
             div.dataset.index = i
@@ -73,12 +64,11 @@ function slider() {
 
         mainDiv.addEventListener("click", (el) => {
             if (el.target.classList.contains("nav-krapka")) {
-                const index = el.target.dataset.index
-                Img.src = myImg[index]
-
-                document.querySelectorAll(".nav-krapka").forEach(krapka => krapka.classList.remove("active"))
-                el.target.classList.add("active")
-
+                const index = Number(el.target.dataset.index)
+                value = index 
+                Img.src = myImg[value]
+                updateSlider()
+                restartInterval() 
             }
         })
 
@@ -103,7 +93,7 @@ function slider() {
 
 
 
-
+    restartInterval()
     prev()
     next()
     nav()
