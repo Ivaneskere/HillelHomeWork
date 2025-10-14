@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <!-- <div class="text-center">
+        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <h6 data-bs-toggle="tooltip" data-bs-target="#exampleModal" data-toggle="tooltip"
+                title="Перейти до придбання круасанчику😋">Придбати</h6>
+        </button>
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Круасан з малиною</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="/img/croissant.webp" class="img-fluid img-thumbnail" alt="...">
+                    <h1>Ціна: 40грн</h1>
+                    <h4>Харчова цінність:</h4>
+                    <h6>КБЖВ: 126/6/14/54 на 100г продукту</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Повернутись назад</button>
+                    <button type="button" class="btn btn-primary">Додати до кошика</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+    <div id="liveAlertPlaceholder"></div> -->
+
+    <form name="myForm">
+        <p>Оберіть дату вашого дня народження у форматі ДД/ММ/РРРР</p>
+        <!-- <input type="date" placeholder="Введіть дату вашого народження" name="BDDate"> -->
+        <input type="text" name="BDDate">
+        <button type="button" class="date">Відправити</button>
+        <div class="errors"></div>
+    </form>
+
+
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/locale/uk.js"></script>
+    <script src="/app.js"></script>
+    <script src="/momentTask.js"></script>
+</body>
+
+</html>

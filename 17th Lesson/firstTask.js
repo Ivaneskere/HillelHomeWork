@@ -26,3 +26,7 @@ console.log(calc.subtract(10, 4)); // 6
 console.log(calc.multiply(3, 6)); // 18
 
 console.log(calc.divide(8, 2)); // 4
+
+
+
+let i = prompt("enter num")
