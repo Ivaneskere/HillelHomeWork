@@ -1,0 +1,267 @@
+// 🔧 Змінні
+$font-main: 'Bebas Neue', sans-serif;
+$font-code: 'Courier New', Courier, monospace;
+$primary-color: #FF013C;
+$secondary-color: #00E6F6;
+$bg-gradient: linear-gradient(45deg, transparent 5%, $primary-color 5%);
+
+// 🌍 Базові стилі
+body {
+    background-image: url('../img/thumb-1920-857790.jpg');
+    background-attachment: fixed;
+}
+
+.hidden {
+    display: none;
+}
+
+// 🏗️ Основні блоки
+.mainDiv {
+    display: flex;
+    gap: 30%;
+
+    .item {
+        width: 30%;
+        text-align: center;
+    }
+}
+
+.infoBlock {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-image: linear-gradient(to right, rgba(6, 5, 5, 0), rgb(87, 152, 209));
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    font-family: $font-code;
+}
+
+.buttonBlock {
+    margin-top: 15px;
+}
+
+// 👤 Кнопка people
+.peopleButton {
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 15px;
+    font-family: $font-main;
+    background: $bg-gradient;
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px $secondary-color;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    touch-action: manipulation;
+
+    &::after {
+        --slice-0: inset(50% 50% 50% 50%);
+        --slice-1: inset(80% -6px 0 0);
+        --slice-2: inset(50% -6px 30% 0);
+        --slice-3: inset(10% -6px 85% 0);
+        --slice-4: inset(40% -6px 43% 0);
+        --slice-5: inset(80% -6px 5% 0);
+
+        content: 'ALTERNATE TEXT';
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg,
+                transparent 3%,
+                $secondary-color 3%,
+                $secondary-color 5%,
+                $primary-color 5%);
+        text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px $secondary-color;
+        clip-path: var(--slice-0);
+    }
+
+    &:hover::after {
+        animation: glitch 1s steps(2, end);
+    }
+}
+
+// 🔁 Анімація глітчу
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0, 5px);
+    }
+
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0);
+    }
+
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0);
+    }
+
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0);
+    }
+
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+// 🪐 planetsButton
+.planetsButton {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    touch-action: manipulation;
+
+    &::before {
+        content: "";
+        background: linear-gradient(45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    &::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+// 🚗 vehiclesButton
+.vehiclesButton {
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    box-shadow:
+        rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, .15) 0 1px 2px,
+        rgba(44, 187, 99, .15) 0 2px 4px,
+        rgba(44, 187, 99, .15) 0 4px 8px,
+        rgba(44, 187, 99, .15) 0 8px 16px,
+        rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    touch-action: manipulation;
+
+    &:hover {
+        box-shadow:
+            rgba(44, 187, 99, .35) 0 -25px 18px -14px inset,
+            rgba(44, 187, 99, .25) 0 1px 2px,
+            rgba(44, 187, 99, .25) 0 2px 4px,
+            rgba(44, 187, 99, .25) 0 4px 8px,
+            rgba(44, 187, 99, .25) 0 8px 16px,
+            rgba(44, 187, 99, .25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+    }
+}
+
+// 🧪 Інші стилі
+.text1 {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1px;
+}
+
+.allButton {
+    margin-top: 10px;
+}
+
+.loadMore {
+    border-radius: 20px;
+    background-image: linear-gradient(to right, rgba(41, 11, 188, 0), rgb(87, 152, 209));
+}
+
+.noDots {
+    list-style: none;
+}

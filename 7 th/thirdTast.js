@@ -8,7 +8,7 @@ function thirdTask() {
 
     let lastNumber
 
-    for(let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
         let numberOfUseer = prompt("Введіть число більше ніж 100")
         lastNumber = numberOfUseer
 
@@ -16,7 +16,7 @@ function thirdTask() {
             console.log("Введи ще раз будь ласка")
         } else if (numberOfUseer >= 100 || typeof numberOfUseer === "string" || i > 10) {
             break;
-        } 
+        }
     }
     console.log(lastNumber)
 }
