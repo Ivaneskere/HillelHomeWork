@@ -62,8 +62,8 @@ function third(orders) {
 
 }
 
-// const result = third(orders)
-// console.log(result);
+const result = third(orders)
+console.log(result);
 
 function fourth(orders) {
     function findTopUser(orders) {
