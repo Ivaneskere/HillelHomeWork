@@ -17,3 +17,4 @@ function firstTast() {
 
     myBlock.appendChild(myTable)
 }
+firstTast()

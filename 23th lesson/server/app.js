@@ -1,55 +1,51 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import express from 'express'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+import Todo from '../models/Todo.js'
 
-const app = express();
-app.use(express.json());
+dotenv.config()
 
-// Serve the client folder as static files so the frontend is served from the same origin.
-// This prevents CORS issues when the browser loads `index.html` and then calls this API.
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const clientPath = path.join(__dirname, '..', 'client');
-app.use(express.static(clientPath));
+const app = express()
+app.use(express.json())
 
-// Serve index.html for the root path
-app.get('/', (req, res) => {
-  res.sendFile(path.join(clientPath, 'index.html'));
-});
+mongoose.connect(process.env.MONGO_URI, { user: process.env.DB_USER, pass: process.env.DB_PASS })
+    .then(() => console.log("ok"))
+    .catch(e => console.error(e.message));
 
-const usersDB = [];
-
-const port = 3000;
-
-app.get('/api/users', (request, response) => {
-  response.send(usersDB);
-});
-
-// request.body = { name, login }
-app.post('/api/users', (request, response) => {
-  const { name: fullname, login } = request.body;
-  const newUser = {
-    id: usersDB.length + 1,
-    fullname,
-    login,
-  };
-
-  usersDB.push(newUser);
-  response.send(newUser);
-});
-
-// id
-app.delete('/api/users/:id', (request, response) => {
-  const { id } = request.params;
-  const index = usersDB.findIndex(user => user.id == id);
-  if (index === -1) {
-    return response.sendStatus(400);
-  }
-
-  usersDB.splice(index, 1);
-  response.send('Removed successfully');
+// Отриманння даннних з сервера
+app.get('/todos', async (req, res) => {
+    try {
+        const todo = await Todo.create(req.body)
+        console.log("Створено:", todo);
+        res.status(201).json(todo)
+    } catch (err) {
+        console.error("Error:", err.message);
+        res.status(400).json({ err: err.message })
+    }
 })
 
-app.listen(port, () => {
-  console.log('We live on ' + port);
-});
+// Створення нових данних
+app.post('/todos', (req, res) => {
+    res.send("")
+})
+
+// Оновлення данних
+app.patch('/todos', (req, res) => {
+    res.send("")
+})
+
+// Видалення данних
+app.delete('/todos', (req, res) => {
+    res.send("")
+})
+
+
+
+
+
+
+
+
+
+
+app.listen(3000, () => console.log('http://localhost:3000'));
